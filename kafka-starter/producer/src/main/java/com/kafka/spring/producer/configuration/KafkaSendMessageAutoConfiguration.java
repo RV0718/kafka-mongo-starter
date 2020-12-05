@@ -1,4 +1,4 @@
-package com.kafka.spring.consumer.configuration;
+package com.kafka.spring.producer.configuration;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

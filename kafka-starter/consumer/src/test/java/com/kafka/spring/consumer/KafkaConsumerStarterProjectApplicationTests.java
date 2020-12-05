@@ -49,8 +49,8 @@ class KafkaConsumerStarterProjectApplicationTests {
         DefaultKafkaProducerFactory<String, String> producerFactory = new DefaultKafkaProducerFactory<>(configs);
         this.kafkaTemplate = new KafkaTemplate<>(producerFactory);
 
-        /*consumer settings*/
-        Map<String, Object> consumerConfigs = new HashMap<>(KafkaTestUtils.consumerProps("consumer-id-1", "false", embeddedKafkaBroker));
+        /*producer settings*/
+        Map<String, Object> consumerConfigs = new HashMap<>(KafkaTestUtils.consumerProps("producer-id-1", "false", embeddedKafkaBroker));
         DefaultKafkaConsumerFactory<String, String> consumerFactory = new DefaultKafkaConsumerFactory<>(consumerConfigs, new StringDeserializer(), new StringDeserializer());
         ContainerProperties containerProperties = new ContainerProperties(TEST_TOPIC);
         this.container = new KafkaMessageListenerContainer<>(consumerFactory, containerProperties);

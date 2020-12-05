@@ -11,7 +11,7 @@ kafka:
 
   consumer:
     bootstrap-servers: localhost:9092
-    group-id: "consumer-1"
+    group-id: "producer-1"
     enable-auto-commit: false
     auto-commit-interval-ms: "100"
     session-timeout-ms: "6000"

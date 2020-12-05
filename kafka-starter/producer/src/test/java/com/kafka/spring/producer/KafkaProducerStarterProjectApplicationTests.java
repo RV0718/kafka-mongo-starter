@@ -1,6 +1,6 @@
-package com.kafka.spring.consumer;
+package com.kafka.spring.producer;
 
-import com.kafka.spring.consumer.configuration.KafkaSendMessageAutoConfiguration;
+import com.kafka.spring.producer.configuration.KafkaSendMessageAutoConfiguration;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.junit.jupiter.api.AfterAll;
@@ -54,8 +54,8 @@ class KafkaProducerStarterProjectApplicationTests {
         this.kafkaSendMessageAutoConfiguration = new KafkaSendMessageAutoConfiguration(kafkaTemplate);
 
 
-        /*consumer settings*/
-        Map<String, Object> consumerConfigs = new HashMap<>(KafkaTestUtils.consumerProps("consumer-id-1", "false", embeddedKafkaBroker));
+        /*producer settings*/
+        Map<String, Object> consumerConfigs = new HashMap<>(KafkaTestUtils.consumerProps("producer-id-1", "false", embeddedKafkaBroker));
         DefaultKafkaConsumerFactory<String, String> consumerFactory = new DefaultKafkaConsumerFactory<>(consumerConfigs, new StringDeserializer(), new StringDeserializer());
         ContainerProperties containerProperties = new ContainerProperties(TEST_TOPIC);
         this.container = new KafkaMessageListenerContainer<>(consumerFactory, containerProperties);

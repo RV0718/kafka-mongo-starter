@@ -1,3 +1,3 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.kafka.spring.consumer.configuration.KafkaProducerAutoConfiguration,\
-com.kafka.spring.consumer.configuration.KafkaSendMessageAutoConfiguration
+com.kafka.spring.producer.configuration.KafkaProducerAutoConfiguration,\
+com.kafka.spring.producer.configuration.KafkaSendMessageAutoConfiguration
